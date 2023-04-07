@@ -14,15 +14,15 @@
 
 - Windows 10</b> (21H2)
 
-<h2>Ticket Lifecycle Stages</h2>
+<h2>Post Installation Configuration Objectives</h2>
 
-- Intake
-- Assignment and Communication
-- Working the Issue
-- Resolution
+- Step 1
+- Step 2
+- Step 3
+- Step 4
 
-<h2>Lifecycle Stages</h2>
 
+<h2>Configuration Steps</h2>
 <p>
 <img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
