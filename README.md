@@ -71,4 +71,11 @@ A new user called Aiden Mark was created. Users can create an account and log-in
 
 <img src=https://i.imgur.com/Nqv3Spp.png/>
 
-SLA Plans or Service Level Agreements, are unlimited in osTicket. The purpose of the SLA Plan is to provide a length of time in which the help desk Administrator expects tickets to be closed. Three SLA plans were created; SEV A (critical tickets that needs to be resolve as soon as possible), SEV B ( tickets with high priority that has a longer grace period that SEV A), SEV C (issues that could wait longer to be solved.
+SLA Plans or Service Level Agreements, are unlimited in osTicket. The purpose of the SLA Plan is to provide a length of time in which the help desk Administrator expects tickets to be closed. Three SLA plans were created; SEV A (critical tickets that needs to be resolve as soon as possible), SEV B ( tickets with high priority that has a longer grace period that SEV A), SEV C (issues that could wait longer to be solved).
+
+
+
+<img src=https://i.imgur.com/v6L0D2Z.png/>
+Help topics allows for proper ticket assignment and prompted a response to solving those tickets. Three help topics were created in addition to the generated ones. They were also assigned a department. The image below shows an email created for the system administrator department  with a high priority and help topic assigned. Tickets can be automatically by emailing this address.
+
+<img src=https://i.imgur.com/mCyNuY6.png/>
