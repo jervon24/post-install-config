@@ -76,6 +76,6 @@ SLA Plans or Service Level Agreements, are unlimited in osTicket. The purpose of
 
 
 <img src=https://i.imgur.com/v6L0D2Z.png/>
-Help topics allows for proper ticket assignment and prompted a response to solving those tickets. Three help topics were created in addition to the generated ones. They were also assigned a department. The image below shows an email created for the system administrator department  with a high priority and help topic assigned. Tickets can be automatically by emailing this address.
+Help topics allows for proper ticket assignment and prompted a response to solving those tickets. Three help topics were created in addition to the generated ones. They were also assigned a department. The image below shows an email created for the system administrator department  with a high priority and help topic assigned. Tickets will be automatically creating by emailing this address.
 
 <img src=https://i.imgur.com/mCyNuY6.png/>
