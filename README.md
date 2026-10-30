@@ -2,80 +2,86 @@
 <img src="https://i.imgur.com/Clzj7Xs.png" alt="osTicket logo"/>
 </p>
 
-<h1>osTicket - Post Installation and configuration</h1>
+<h1>osTicket: Post-Installation Configuration</h1>
+
+This project covers configuring osTicket after installation: setting up roles, departments, teams, agents, users, SLA plans, and help topics so the help desk is ready to receive and route tickets.
 
 <h2>Environments and Technologies Used</h2>
 
 - Microsoft Azure (Virtual Machines/Compute)
 - Remote Desktop
 - Internet Information Services (IIS)
+- osTicket
 
-<h2>Operating Systems Used </h2>
+<h2>Operating System Used</h2>
 
-- Windows 10</b> (21H2)
+- Windows 10 (21H2)
 
-<h2>Post Installation Configuration Objectives</h2>
+<h2>Configuration Objectives</h2>
 
-- Configure Roles, departments and teams in Admin Panel
-- Allow anyone to create tickets in osTicket
-- Configure agents and users
-- configure SLA
-- Configure help topics
+1. Configure roles
+2. Create departments
+3. Create teams
+4. Allow anyone to create tickets
+5. Configure agents and users
+6. Configure SLA plans
+7. Configure help topics
 
+<h3>1. Configure Roles</h3>
 
-<h2>Configuration Steps</h2>
-<p>
-<img src=https://i.imgur.com/A866phg.png/>
+<img src="https://i.imgur.com/A866phg.png" alt="Creating the Administration role"/>
+<img src="https://i.imgur.com/EnMya60.png" alt="Permissions assigned to the Administration role"/>
 
-  
-Roles are the permissions granted to Agents per Department that they have access to. Each Role has a set of permissions that can be assigned to agents given that Role in association with a Department they have access to. In this lab, I logged into the admin panel of os Ticket to configure roles. As per the picture, I added an "administration" role. I also, added permissions to this role. The picture below shows some of the permissions which were added.
-  
-  
-  
+A role defines what an agent can do within the departments they can access. In the Admin Panel, I created an **Administration** role and assigned its permissions (shown above). In production, roles should follow the principle of least privilege, giving each agent only the permissions their job requires.
 
+<h3>2. Create Departments</h3>
 
+<img src="https://i.imgur.com/AD17fNe.png" alt="System Administrator department settings"/>
 
-<img src=https://i.imgur.com/EnMya60.png/>
+I created a **System Administrator** department as the top-level department, with its own dedicated email address.
 
-<p>
-<img src=https://i.imgur.com/AD17fNe.png/>
-</p>
-<p>
-A new department called "System Administrator" were added to os Ticket. As per the picture, this is the top level department of the organization, it has its personalized email address.
-</p>
-<br />
+<h3>3. Create Teams</h3>
 
-<p>
-<img src=https://i.imgur.com/87VHYvg.png/>
-</p>
-<p>
-"Level II support" team was added. The settings were then configured.Teams allow you to pull Agents from different Departments and organize them to handle a specific issue or user via a Help Topic or Ticket Filter. This for the ticket to be resolve in a timely manner and with the best means possible.
-</p>
-<br />
+<img src="https://i.imgur.com/87VHYvg.png" alt="Level II Support team settings"/>
 
-<img src=https://i.imgur.com/M9rEHHZ.png/>
+I created a **Level II Support** team and configured its settings. Teams group agents from different departments so escalated or specialized issues reach the right people, regardless of which department they sit in.
 
-The picture above shows that "Registration Required: Require registration and login to create tickets" were unchecked. This enables any user to creat tickets in osTicket.
+<h3>4. Allow Anyone to Create Tickets</h3>
 
-<img src=https://i.imgur.com/GTr1jnk.png/> 
-<img src=https://i.imgur.com/w9r8OCi.png/>
-<img src=https://i.imgur.com/Xsa1RsA.png/>
+<img src="https://i.imgur.com/M9rEHHZ.png" alt="Registration Required setting unchecked"/>
 
-The picture above shows a new agent; Michael Peters with his credentials added. He has access to the system administrator department and he also a member of level II support team.Agents are given access to the help desk with the intent to respond and resolve the tickets.
+I unchecked **Registration Required: Require registration and login to create tickets**, so anyone can submit a ticket. This lowers the barrier for users, but in a real environment it's a trade-off: open submission can invite spam or abuse, so it's often paired with CAPTCHA or limited to internal networks.
 
+<h3>5. Configure Agents and Users</h3>
 
-<img src=https://i.imgur.com/X3J4bph.png/>
+<img src="https://i.imgur.com/GTr1jnk.png" alt="New agent account details"/>
+<img src="https://i.imgur.com/w9r8OCi.png" alt="Agent department access"/>
+<img src="https://i.imgur.com/Xsa1RsA.png" alt="Agent team membership"/>
 
-A new user called Aiden Mark was created. Users can create an account and log-in to create a ticket or check a ticket’s status.They are ticket owners of the tickets in the help desk.
+**Agents** are help desk staff who respond to and resolve tickets. I created agent **Michael Peters**, gave him access to the System Administrator department, and added him to the Level II Support team.
 
+<img src="https://i.imgur.com/X3J4bph.png" alt="New user account"/>
 
-<img src=https://i.imgur.com/Nqv3Spp.png/>
+**Users** are the people who submit tickets and own them. I created user **Aiden Mark**, who can log in to create tickets and check their status.
 
-SLA Plans or Service Level Agreements, are unlimited in osTicket. The purpose of the SLA Plan is to provide a length of time in which the help desk Administrator expects tickets to be closed. Three SLA plans were created; SEV A (critical tickets that needs to be resolve as soon as possible), SEV B ( tickets with high priority that has a longer grace period that SEV A), SEV C (issues that could wait longer to be solved).
+<h3>6. Configure SLA Plans</h3>
 
+<img src="https://i.imgur.com/Nqv3Spp.png" alt="SLA plans"/>
 
+SLA (Service Level Agreement) plans set how long a ticket can stay open before it's considered overdue. I created three:
 
-<img src=https://i.imgur.com/v6L0D2Z.png/>
-Help topics allows for proper ticket assignment and prompted a response to solving those tickets. Three help topics were created in addition to the generated ones. They were also assigned a department. The image below shows an email created for the system administrator department  with a high priority and help topic assigned. Tickets will be automatically creating by emailing this address.
+| SLA Plan | Use | Grace Period |
+|---|---|---|
+| SEV-A | Critical issues needing immediate resolution | `<X> hours` |
+| SEV-B | High-priority issues | `<X> hours` |
+| SEV-C | Issues that can wait | `<X> hours` |
 
-<img src=https://i.imgur.com/mCyNuY6.png/>
+<h3>7. Configure Help Topics</h3>
+
+<img src="https://i.imgur.com/v6L0D2Z.png" alt="Help topics list"/>
+
+Help topics categorize incoming tickets so they're routed to the right department automatically. In addition to the defaults, I created three topics, `<Topic 1>`, `<Topic 2>`, and `<Topic 3>`, each assigned to a department.
+
+<img src="https://i.imgur.com/mCyNuY6.png" alt="System Administrator email with priority and help topic"/>
+
+I also set up an email address for the System Administrator department with high priority and a help topic assigned. Emails sent to this address automatically become tickets.
